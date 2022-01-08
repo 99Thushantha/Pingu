@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#06324A"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:layout_width="300sp"
+       android:layout_height="650sp"
+       android:orientation="horizontal"
+       android:gravity="center"
+       android:id="@+id/asas">
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:layout_weight="0"
+           android:alpha="0.15"
+           android:id="@+id/asasdd"
+           android:src="@drawable/ui_component_flash_screen_sq_lite">
+       </ImageView>
+
+   </LinearLayout>
+
+    <ImageView
+        android:layout_width="400sp"
+        android:layout_height="400sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-550dp"
+        android:layout_weight="0"
+        android:id="@+id/as"
+        android:src="@mipmap/ic_launcher_pingu_logo_foreground">
+    </ImageView>
+    <ProgressBar
+        android:id="@+id/progressBarFlashScreen"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-65dp"
+        android:indeterminate="true"
+        android:max="100"
+        android:minHeight="30dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FE4E0C"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="-400dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/app_name">
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/home_screen_bak"
+    tools:context=".HomeActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/L1"
+        android:layout_marginTop="290dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardDownloadApps"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="40dp"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="#A8BACE"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/info_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:alpha="0.8"
+                android:textColor="@color/black"
+                android:text="Downloaded Apps"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                app:srcCompat="@drawable/ic_download_apps" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/CardSystemApp"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            card_view:cardCornerRadius="15dp"
+            app:cardBackgroundColor="#A8BACE"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/info_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:textSize="18sp"
+                android:alpha="0.8"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:text="System       Apps"/>
+
+            <ImageView
+                android:id="@+id/imageViewSysApp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                app:srcCompat="@drawable/ic_system_apps" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/L2"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/CardGames"
+                    android:layout_width="130dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="40dp"
+                    card_view:cardCornerRadius="15dp"
+                    app:cardBackgroundColor="#A8BACE"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/info_text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_marginTop="110dp"
+                        android:textSize="18sp"
+                        android:alpha="0.8"
+                        android:textColor="@color/black"
+                        android:text="Games"/>
+                    <ImageView
+                        android:id="@+id/imageViewGame"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="81dp"
+                        app:srcCompat="@drawable/ic_console_home" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/CardAbout"
+                    android:layout_width="130dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="10dp"
+                    card_view:cardCornerRadius="15dp"
+                    app:cardBackgroundColor="#A8BACE"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/info_text4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_marginTop="110dp"
+                        android:textSize="18sp"
+                        android:alpha="0.8"
+                        android:textColor="@color/black"
+                        android:text="About"/>
+                    <ImageView
+                        android:id="@+id/imageViewAbout"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="81dp"
+                        app:srcCompat="@drawable/ic_about" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+</LinearLayout>
