@@ -28,7 +28,7 @@ import java.util.List;
 
 public class ConnectScreen extends AppCompatActivity {
 
-    String AppIcon;
+    String SetScreen;
     String AppName;
     TextView AppNameText;
     ImageView AppIconView;
@@ -58,6 +58,14 @@ public class ConnectScreen extends AppCompatActivity {
             if(AppName.equals(applicationInfo.loadLabel(pm)))
             {
                 AppIconView.setImageDrawable(applicationInfo.loadIcon(pm));
+                if((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM)!=0)
+                {
+                    SetScreen="System";
+                }
+                else
+                {
+                    SetScreen="Download";
+                }
             }
         }
 
@@ -67,8 +75,9 @@ public class ConnectScreen extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
 
-                Intent intent = new Intent(getApplicationContext(), DownloadAppsRView.class);
-                startActivity(intent);
+                Intent nav = new Intent(getApplicationContext(), DownloadAppsRView.class);
+                nav.putExtra("ScreenType",SetScreen);
+                startActivity(nav);
                 finish();
                 return true;
 

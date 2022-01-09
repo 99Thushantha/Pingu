@@ -45,7 +45,10 @@ public class DownloadAppsRView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
-        data =extras.getString("ScreenType");
+        if(extras.getString("ScreenType") != "")
+        {
+            data =extras.getString("ScreenType");
+        }
         if(data.equals("Download"))
         {
             requestWindowFeature(Window.FEATURE_ACTION_BAR);
@@ -121,6 +124,7 @@ public class DownloadAppsRView extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... params) {
+
             applist = checkForLaunchIntent(packageManager.getInstalledApplications(PackageManager.GET_META_DATA));
             adapter = new Adapter(DownloadAppsRView.this, R.layout.activity_custom_gride_layout, applist);
             return null;
@@ -130,10 +134,18 @@ public class DownloadAppsRView extends AppCompatActivity {
             ArrayList<ApplicationInfo> applist = new ArrayList<ApplicationInfo>();
             for (ApplicationInfo info : list) {
                 try {
-                    if (null != packageManager.getLaunchIntentForPackage(info.packageName)) {
+                    /*if (null != packageManager.getLaunchIntentForPackage(info.packageName)) {
                         applist.add(info)
                         ;
+                    }*/
+
+                    if((info.flags & ApplicationInfo.FLAG_SYSTEM) == 0 && data.equals("Download")) {
+                        applist.add(info);
+                        //it's a system app, not interested
+                    } else if ((info.flags & ApplicationInfo.FLAG_SYSTEM) != 0 && data.equals("System")) {
+                        applist.add(info);
                     }
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

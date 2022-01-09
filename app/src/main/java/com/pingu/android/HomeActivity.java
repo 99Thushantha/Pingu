@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView DownloadApps,SystemApps,Games;
+    CardView DownloadApps,SystemApps,Games,About;
 
 
     @Override
@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         DownloadApps=findViewById(R.id.CardDownloadApps);
         SystemApps=findViewById(R.id.CardSystemApp);
         Games=findViewById(R.id.CardGames);
+        About=findViewById(R.id.CardAbout);
 
         DownloadApps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +57,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Alert();
+            }
+        });
+
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nav = new Intent(HomeActivity.this, About.class);
+                startActivity(nav);
+                finish();
             }
         });
     }
