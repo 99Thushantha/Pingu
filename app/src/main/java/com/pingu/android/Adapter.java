@@ -2,6 +2,8 @@ package com.pingu.android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,55 +19,43 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements Filterable {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
 
-    private List<ExampleItem> exampleList;
-    private List<ExampleItem> exampleListFull;
+    private List<ApplicationInfo> applist=null;
+    //private List<ApplicationInfo> exampleListFull;
+    private Context context;
+    private PackageManager packageManager;
 
-    List<String> titles;
-    List<Integer> images;
-    LayoutInflater inflater;
 
-    Adapter(List<ExampleItem> exampleList) {
-        this.exampleList = exampleList;
-        exampleListFull = new ArrayList<>(exampleList);
+    Adapter(Context context,int textViewResourceId,List<ApplicationInfo> applist) {
+        this.context = context;
+        this.applist = applist;
+       // exampleListFull = new ArrayList<>(applist);
+        packageManager = context.getPackageManager();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int orientation;
         View view;
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_custom_gride_layout,
                 parent, false);
-        /*Context ctx= parent.getContext();
-        orientation = ctx.getResources().getConfiguration().orientation;
-        if(orientation== Configuration.ORIENTATION_PORTRAIT)
-        {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ui_app_list,
-                    parent, false);
-        }
-        else
-        {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_custom_gride_layout,
-                    parent, false);
-        }*/
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ExampleItem currentItem = exampleList.get(position);
-        holder.title.setText(currentItem.getTitle());
-        holder.gridIcon.setImageResource(currentItem.getGrideIcon());
+        final ApplicationInfo applicationInfo = applist.get(position);
+        holder.getIconView().setImageDrawable(applicationInfo.loadIcon(packageManager));
+        holder.getAppName().setText(applicationInfo.loadLabel(packageManager));
     }
 
     @Override
     public int getItemCount() {
-        return exampleList.size();
+        return applist.size();
     }
 
-    @Override
+    /*@Override
     public Filter getFilter() {
         return exampleFilter;
     }
@@ -73,15 +63,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            List<ExampleItem> filteredList = new ArrayList<>();
+            List<ApplicationInfo> filteredList = new ArrayList<>();
 
             if (constraint == null || constraint.length() == 0) {
                 filteredList.addAll(exampleListFull);
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
-                for (ExampleItem item : exampleListFull) {
-                    if (item.getTitle().toLowerCase().contains(filterPattern)) {
+                for (ApplicationInfo item : exampleListFull) {
+                    if (item.loadLabel(packageManager).toString().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
                 }
@@ -95,20 +85,28 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            exampleList.clear();
-            exampleList.addAll((List) results.values);
+            applist.clear();
+            applist.addAll((List) results.values);
             notifyDataSetChanged();
         }
-    };
+    };*/
 
         class ViewHolder extends RecyclerView.ViewHolder
         {
-            TextView title;
-            ImageView gridIcon;
+            private final TextView appName;
+            private final ImageView iconView;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                title=itemView.findViewById(R.id.txtAppName);
-                gridIcon=itemView.findViewById(R.id.imageViewAppIcon);
+                iconView = itemView.findViewById(R.id.imageViewAppIcon);
+                appName = itemView.findViewById(R.id.txtAppName);
+
+            }
+            public TextView getAppName() {
+                return appName;
+            }
+
+            public ImageView getIconView() {
+                return iconView;
             }
         }
 

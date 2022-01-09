@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,9 +16,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-
-        Intent nav = new Intent(MainActivity.this, HomeActivity.class);
-        startActivity(nav);
-        finish();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent nav = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(nav);
+                finish();
+            }
+        },4000);
     }
 }
