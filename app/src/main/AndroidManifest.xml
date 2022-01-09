@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pingu">
         <activity
+            android:name=".ConnectScreen"
+            android:exported="false" />
+        <activity
             android:name=".DownloadAppsRView"
             android:exported="false" />
         <activity

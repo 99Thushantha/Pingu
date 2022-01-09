@@ -2,6 +2,7 @@ package com.pingu.android;
 
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,9 +21,11 @@ import android.os.Message;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,8 @@ public class DownloadAppsRView extends AppCompatActivity {
     private List<ApplicationInfo> applist=null;
     String data=null;
     RecyclerView DownloadARV;
+    //CardView CardApp;
+    TextView AppName;
     private PackageManager packageManager = null;
 
     @Override
@@ -55,17 +60,34 @@ public class DownloadAppsRView extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_download_apps_rview);
 
+        //CardApp=findViewById(R.id.CrdApp);
+        AppName=findViewById(R.id.txtAppName);
 
         DownloadARV=findViewById(R.id.DownloadARV);
         packageManager = getPackageManager();
         new LoadApplications().execute();
 
         setUpRecyclerView();
-
+        getSelectedApp();
         //fillExampleList();
         //setUpRecyclerView();
 
     }
+
+    private void getSelectedApp()
+    {
+        /*CardApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nav = new Intent(getApplicationContext(), ConnectScreen.class);
+                startActivity(nav);
+                finish();
+            }
+        });*/
+
+
+    }
+
 
    /* private void fillExampleList() {
         exampleList = new ArrayList<>();
@@ -185,4 +207,5 @@ public class DownloadAppsRView extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

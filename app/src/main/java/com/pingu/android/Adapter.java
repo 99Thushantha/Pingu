@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +53,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
         final ApplicationInfo applicationInfo = applist.get(position);
         holder.getIconView().setImageDrawable(applicationInfo.loadIcon(packageManager));
         holder.getAppName().setText(applicationInfo.loadLabel(packageManager));
+        holder.getIconView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent nav = new Intent(view.getContext(), ConnectScreen.class);
+                nav.putExtra("AppName",holder.getAppName().getText());
+                holder.getIconView().getContext().startActivity(nav);
+
+            }
+        });
     }
 
     @Override

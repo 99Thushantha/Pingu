@@ -6,6 +6,8 @@
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2572072072072072" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ic_launcher_flashscreen_background.xml" value="0.2572072072072072" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ic_launcher_pingu_logo_background.xml" value="0.2572072072072072" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_button_round.xml" value="0.3490990990990991" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_connect_screen_sq.xml" value="0.2773333333333333" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_flash_screen_sq_lite.xml" value="0.3490990990990991" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_home_rectangle_up.xml" value="0.2671171171171171" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-land/activity_custom_gride_layout.xml" value="0.2623456790123457" />
@@ -14,6 +16,7 @@
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-normal/activity_main.xml" value="0.2346014492753623" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-small/activity_main.xml" value="0.2346014492753623" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-xlarge/activity_main.xml" value="0.17691256830601093" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_connect_screen.xml" value="0.2671171171171171" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_custom_gride_layout.xml" value="0.22" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_download_apps_grid.xml" value="0.33066666666666666" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_download_apps_rview.xml" value="0.24144144144144145" />
