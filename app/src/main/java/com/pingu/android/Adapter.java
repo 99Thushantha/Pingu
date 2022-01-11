@@ -24,10 +24,10 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements Filterable {
 
     private List<ApplicationInfo> applist=null;
-    //private List<ApplicationInfo> exampleListFull;
+    private List<ApplicationInfo> exampleListFull;
     private Context context;
     private PackageManager packageManager;
 
@@ -35,7 +35,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
     Adapter(Context context,int textViewResourceId,List<ApplicationInfo> applist) {
         this.context = context;
         this.applist = applist;
-       // exampleListFull = new ArrayList<>(applist);
+        exampleListFull = new ArrayList<>(applist);
         packageManager = context.getPackageManager();
     }
 
@@ -70,7 +70,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
         return applist.size();
     }
 
-    /*@Override
+    @Override
     public Filter getFilter() {
         return exampleFilter;
     }
@@ -104,7 +104,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
             applist.addAll((List) results.values);
             notifyDataSetChanged();
         }
-    };*/
+    };
 
         class ViewHolder extends RecyclerView.ViewHolder
         {

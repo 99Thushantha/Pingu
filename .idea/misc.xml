@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2572072072072072" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29234234234234235" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ic_launcher_flashscreen_background.xml" value="0.2572072072072072" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ic_launcher_pingu_logo_background.xml" value="0.2572072072072072" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_button_round.xml" value="0.3490990990990991" />
@@ -11,6 +12,7 @@
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_flash_screen_sq_lite.xml" value="0.3490990990990991" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/drawable/ui_component_home_rectangle_up.xml" value="0.2671171171171171" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-land/activity_custom_gride_layout.xml" value="0.2623456790123457" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-land/activity_home.xml" value="0.24382716049382716" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-land/activity_main.xml" value="0.26979166666666665" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-large/activity_main.xml" value="0.17691256830601093" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout-normal/activity_main.xml" value="0.2346014492753623" />
@@ -26,9 +28,13 @@
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_main.xml" value="0.24094202898550723" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/activity_test.xml" value="0.25" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/search_filter_download_apps.xml" value="0.24324324324324326" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/sure.xml" value="0.2912037037037037" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/layout/ui_app_list.xml" value="0.3063063063063063" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/menu/filter_download_apps.xml" value="0.24324324324324326" />
         <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_flashscreen.xml" value="0.3490990990990991" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_pingu_logo.xml" value="0.29234234234234235" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_pingu_logo_round.xml" value="0.29234234234234235" />
+        <entry key="..\:/Projects/Harshana/Pingu/app/src/main/res/xml/predefined.xml" value="0.30434782608695654" />
       </map>
     </option>
   </component>

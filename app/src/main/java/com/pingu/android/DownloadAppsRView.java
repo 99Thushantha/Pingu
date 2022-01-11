@@ -36,7 +36,6 @@ public class DownloadAppsRView extends AppCompatActivity {
     private List<ApplicationInfo> applist=null;
     String data=null;
     RecyclerView DownloadARV;
-    //CardView CardApp;
     TextView AppName;
     private PackageManager packageManager = null;
 
@@ -125,8 +124,12 @@ public class DownloadAppsRView extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
-            applist = checkForLaunchIntent(packageManager.getInstalledApplications(PackageManager.GET_META_DATA));
-            adapter = new Adapter(DownloadAppsRView.this, R.layout.activity_custom_gride_layout, applist);
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    applist = checkForLaunchIntent(packageManager.getInstalledApplications(PackageManager.GET_META_DATA));
+                    adapter = new Adapter(DownloadAppsRView.this, R.layout.activity_custom_gride_layout, applist);
+                }
+            });
             return null;
         }
 
@@ -138,7 +141,6 @@ public class DownloadAppsRView extends AppCompatActivity {
                         applist.add(info)
                         ;
                     }*/
-
                     if((info.flags & ApplicationInfo.FLAG_SYSTEM) == 0 && data.equals("Download")) {
                         applist.add(info);
                         //it's a system app, not interested
@@ -170,9 +172,9 @@ public class DownloadAppsRView extends AppCompatActivity {
         int orientation, grideCol=0; Context ctx=getApplicationContext();
         orientation = ctx.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            grideCol=2;
+            grideCol=3;
         } else {
-            grideCol=4;
+            grideCol=5;
         }
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,grideCol,GridLayoutManager.VERTICAL,false);
         //adapter = new Adapter(DownloadAppsRView.this, R.layout.activity_custom_gride_layout, applist);
@@ -180,7 +182,7 @@ public class DownloadAppsRView extends AppCompatActivity {
         DownloadARV.setAdapter(adapter);
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.filter_download_apps, menu);
@@ -204,7 +206,7 @@ public class DownloadAppsRView extends AppCompatActivity {
         });
         return true;
     }
-*/
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

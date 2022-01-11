@@ -10,52 +10,61 @@
     tools:context=".MainActivity">
 
    <LinearLayout
-       android:layout_width="650sp"
-       android:layout_height="300sp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="40dp"
+       android:layout_marginLeft="70dp"
+       android:layout_marginRight="70dp"
+       android:layout_marginBottom="40dp"
        android:orientation="horizontal"
        android:gravity="center"
+       android:background="@drawable/flash_screen_alpa_bak_land"
        android:id="@+id/asas">
-       <ImageView
+
+       <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:gravity="top"
            android:layout_gravity="center"
-           android:layout_weight="0"
-           android:alpha="0.15"
-           android:id="@+id/asasdd"
-           android:src="@drawable/ui_component_flash_screen_sq_lite">
-       </ImageView>
+           android:id="@+id/asaas">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="#FE4E0C"
+               android:textSize="40sp"
+               android:textStyle="bold"
+               android:fontFamily="sans-serif"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="center_horizontal"
+               android:text="@string/app_name">
+           </TextView>
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="320dp"
+               android:layout_gravity="center"
+               android:layout_marginTop="-30dp"
+               android:layout_weight="0"
+               android:id="@+id/as"
+               android:src="@mipmap/ic_launcher_foreground">
+           </ImageView>
+           <ProgressBar
+               android:id="@+id/progressBarFlashScreen"
+               style="?android:attr/progressBarStyleHorizontal"
+               android:layout_width="130dp"
+               android:layout_height="20dp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="-60dp"
+               android:indeterminate="true"
+               android:max="100"
+               android:minHeight="30dp" />
+
+
+       </LinearLayout>
 
    </LinearLayout>
 
-    <ImageView
-        android:layout_width="400sp"
-        android:layout_height="350sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-320dp"
-        android:layout_weight="0"
-        android:id="@+id/as"
-        android:src="@mipmap/ic_launcher_pingu_logo_foreground">
-    </ImageView>
-    <ProgressBar
-        android:id="@+id/progressBarFlashScreen"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="130dp"
-        android:layout_height="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-65dp"
-        android:indeterminate="true"
-        android:max="100"
-        android:minHeight="30dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FE4E0C"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif"
-        android:layout_marginTop="-290dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/app_name">
-    </TextView>
+
 
 </LinearLayout>

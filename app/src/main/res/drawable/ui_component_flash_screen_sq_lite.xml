@@ -2,9 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/listview_background_shape">
     <padding android:left="2dp"
         android:top="2dp"
-        android:alpha="0.2"
         android:right="2dp"
         android:bottom="2dp" />
     <corners android:radius="55dp" />
-    <solid android:color="#B0B5C1" />
+    <solid android:color="#3F7FBF" />
 </shape>
